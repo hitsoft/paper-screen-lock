@@ -1,0 +1,30 @@
+{
+  "name": "paper-screen-lock",
+  "version": "1.0.0",
+  "authors": [
+    "Konstantin Borisov <smeagol74@gmail.com>"
+  ],
+  "description": "Locks the screen with the infinite circle progress if was not unlocked quicker than some timeout.",
+  "keywords": [
+    "web-component",
+    "polymer",
+    "hitsoft",
+    "ajax",
+    "progress"
+  ],
+  "main": "paper-screen-lock.html",
+  "license": "http://polymer.github.io/LICENSE.txt",
+  "homepage": "http://stash.hitsoft-it.com:7990/projects/HP/repos/paper-screen-lock/browse",
+  "ignore": [
+    "/.*",
+    "/test/"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.2.0",
+    "paper-elements": "PolymerElements/paper-elements#^1.0.0"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
+    "web-component-tester": "*"
+  }
+}

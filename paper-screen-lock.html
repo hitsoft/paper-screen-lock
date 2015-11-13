@@ -51,7 +51,7 @@ Example:
         }
     </style>
     <template>
-        <paper-spinner active alt="[[alt]]"></paper-spinner>
+        <paper-spinner id="spinner" alt="[[alt]]"></paper-spinner>
     </template>
     <script>
         Polymer({
@@ -62,13 +62,15 @@ Example:
                     value: 'Loading...'
                 }
             },
+
             /**
              * Locks the screen protecting it from operations while some important background operation in progress.
              * If was not unlocked in `timeout` milliseconds (defaults to 1500) then shows infinite circle progress
              * @param {number=} timeout
              */
-            lock: function(timeout){
+            lock: function (timeout) {
                 var self = this;
+                self.$.spinner.active = true;
                 if (timeout != undefined) {
                     self.timeout = timeout;
                 } else {
@@ -82,15 +84,16 @@ Example:
                     self._showProgress();
                 } else {
                     self.classList.add('transparent');
-                    self._inTimer = setTimeout(function(){
+                    self._inTimer = setTimeout(function () {
                         self._showProgress();
                     }, self.timeout);
                 }
             },
+
             /**
              * Unlocks the screen
              */
-            unlock: function(){
+            unlock: function () {
                 var self = this;
                 if (self._inTimer != null) {
                     clearTimeout(self._inTimer);
@@ -98,20 +101,21 @@ Example:
                 }
                 self.classList.add('transparent');
                 self.classList.remove('opened');
-                self._outTimer = setTimeout(function(){
+                self._outTimer = setTimeout(function () {
                     self._hideOverlay();
                 }, 500);
             },
-            _showProgress: function(){
+            _showProgress: function () {
                 var self = this;
                 self._inTimer = null;
                 self.classList.add('opened');
                 self.classList.remove('transparent');
             },
-            _hideOverlay: function(){
+            _hideOverlay: function () {
                 var self = this;
                 self._outTimer = null;
                 self.classList.remove('transparent');
+                self.$.spinner.active = false;
             }
         });
     </script>

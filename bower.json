@@ -14,7 +14,7 @@
   ],
   "main": "paper-screen-lock.html",
   "license": "http://polymer.github.io/LICENSE.txt",
-  "homepage": "http://stash.hitsoft-it.com:7990/projects/HP/repos/paper-screen-lock/browse",
+  "homepage": "https://github.com/hitsoft/paper-screen-lock",
   "ignore": [
     "/.*",
     "/test/"
